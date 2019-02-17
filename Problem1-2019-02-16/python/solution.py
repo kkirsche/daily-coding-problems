@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-from typing import List
+from typing import List, Set
+
 
 def result(target_number: int, number_list: List[int]):
-    seen = set()
+    seen: Set[int] = set()
     for n in number_list:
         diff = target_number - n
         if diff in seen:
