@@ -9,9 +9,3 @@ def result(target_number: int, number_list: List[int]):
             return True
         seen.add(n)
     return False
-    
-sl = [10, 15, 3, 7]
-k = 17
-
-r = result(k, sl)
-print(r)
