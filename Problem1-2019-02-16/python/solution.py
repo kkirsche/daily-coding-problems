@@ -2,10 +2,10 @@
 from typing import List, Set
 
 
-def result(target_number: int, number_list: List[int]):
+def result(target_number: int, number_list: List[int]) -> bool:
     seen: Set[int] = set()
     for n in number_list:
-        diff = target_number - n
+        diff: int = target_number - n
         if diff in seen:
             return True
         seen.add(n)
