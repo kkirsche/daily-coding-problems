@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
-require 'set'
-require 'minitest/autorun'
+require "set"
+require "minitest/autorun"
 
-def calculate (num_list, num_sum)
+def calculate(num_list, num_sum)
   seen = Set[]
   num_list.each do |n|
     diff = num_sum - n
