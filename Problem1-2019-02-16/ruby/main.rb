@@ -1,15 +1,16 @@
 #!/usr/bin/env ruby
 
+require 'set'
 require 'minitest/autorun'
 
 def calculate (num_list, num_sum)
-  seen = {}
+  seen = Set[]
   num_list.each do |n|
     diff = num_sum - n
-    if seen.key?(diff)
+    if seen.include?(diff)
       return true
     end
-    seen[n] = n
+    seen.add(n)
   end
   return false
 end
