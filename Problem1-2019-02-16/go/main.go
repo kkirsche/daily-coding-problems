@@ -3,13 +3,13 @@ package main
 import "fmt"
 
 func calculate(l []int, k int) bool {
-	seen := map[int]int{}
+	seen := map[int]bool{}
 	for _, n := range l {
 		diff := k - n
 		if _, ok := seen[diff]; ok {
 			return true
 		}
-		seen[n] = n
+		seen[n] = true
 	}
 
 	return false
