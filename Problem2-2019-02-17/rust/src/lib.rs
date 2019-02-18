@@ -19,9 +19,18 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_product() {
+    fn test_product_example_one() {
         let list_in = vec![1, 2, 3, 4, 5];
         let expected_out = vec![120, 60, 40, 30, 24];
+
+        let list_out = product_of_vec_except_at_index(list_in);
+        assert_eq!(list_out, expected_out);
+    }
+
+    #[test]
+    fn test_product_example_two() {
+        let list_in = vec![3, 2, 1];
+        let expected_out = vec![2, 3, 6];
 
         let list_out = product_of_vec_except_at_index(list_in);
         assert_eq!(list_out, expected_out);
