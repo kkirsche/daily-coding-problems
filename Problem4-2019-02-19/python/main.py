@@ -16,7 +16,10 @@ def first_positive_missing_integer(list_in: List[int]) -> int:
                 largest_number = n
             if missing_value == 0:
                 missing_value = next_number
-            if next_number not in seen and missing_value > next_number:
+            if next_number not in seen:
+                if missing_value > next_number:
+                    missing_value = next_number
+            if missing_value in seen:
                 missing_value = next_number
     if largest_number == missing_value:
         missing_value = missing_value + 1
