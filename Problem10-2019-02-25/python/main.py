@@ -18,7 +18,7 @@ async def job_producer(q, n):
 
 async def run_job(f, n, q):
     print(f"sleeping {n}ms")
-    # await sleep(float(n/100))
+    await sleep(float(n/100))
     print("run!")
     await f(n)
     q.task_done()
@@ -26,6 +26,8 @@ async def run_job(f, n, q):
 
 async def job_consumer(np, q):
     while True:
+        await sleep(0)
+
         (f, n) = await q.get()
         print('received')
         t = create_task(run_job(f, n, q))
